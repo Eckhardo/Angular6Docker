@@ -1,2 +1,2 @@
 # Angular6Docker
-A dockerized Angular 5 application
+A dockerized Angular 6 application
