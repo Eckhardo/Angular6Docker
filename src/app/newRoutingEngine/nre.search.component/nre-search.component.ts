@@ -61,24 +61,29 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
       startDate: new FormControl(new Date().toISOString(), Validators.required),
       endDate: new FormControl(new Date().toISOString())
 
-    });
 
+    });
+    console.log('constructor middle');
     // set default values in form
     this.patchDefaultValues();
     this.setEndDate(new Date(this.startDate.value));
 
     // event handler
     this.onPortOfLoadingChanges(this.portOfLoading);
+    console.log('constructor pol');
     this.onPortOfDestinationChanges(this.portOfDestination);
+
     this.onStartDateChanges(this.startDate);
+    console.log('constructor startdate ready');
 
     this.onVS1Changes(this.vesselsystem_1);
     this.onVS2Changes(this.vesselsystem_2);
     this.onVS3Changes(this.vesselsystem_3);
+    console.log('constructor vs ready');
     this.onTsPortChanges(this.ts_1, 1);
     this.onTsPortChanges(this.ts_2, 2);
     this.onTsPortChanges(this.ts_3, 3);
-
+    console.log('constructor end');
   }
 
   get form() {
@@ -192,8 +197,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
   private onPortOfLoadingChanges(control: AbstractControl) {
     control.valueChanges
       .pipe(debounceTime(400),
-        distinctUntilChanged()
-      )
+        distinctUntilChanged())
       .subscribe(data => {
         const theLength: number = data.toString().trim().length;
         if (theLength === 0) {
@@ -206,7 +210,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
           return;
         }
 
-        this.masterDataService.filterPorts(data).subscribe(
+        this.masterDataService.filterPortLocations(data).subscribe(
           result => {
             if (result.length === 0) {
               this.portOfLoading.markAsTouched();
@@ -247,7 +251,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
           return;
         }
 
-        this.masterDataService.filterPorts(data).subscribe(
+        this.masterDataService.filterPodLocations(data).subscribe(
           result => {
 
             console.log('result:' + JSON.stringify(result));
@@ -298,7 +302,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
           }
           return;
         }
-        this.masterDataService.filterPorts(data).subscribe(
+        this.masterDataService.filterPodLocations(data).subscribe(
           result => {
 
             console.log('result:' + JSON.stringify(result));
@@ -366,7 +370,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
           return;
         }
 
-        this.masterDataService.filterVesselSystems(data).subscribe(
+        this.masterDataService.filterVS(data).subscribe(
           result => {
 
             console.log('result:' + JSON.stringify(result));
@@ -404,7 +408,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
           return;
         }
 
-        this.masterDataService.filterVesselSystems(data).subscribe(
+        this.masterDataService.filterVS(data).subscribe(
           result => {
 
             console.log('result:' + JSON.stringify(result));
@@ -441,7 +445,7 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
           return;
         }
 
-        this.masterDataService.filterVesselSystems(data).subscribe(
+        this.masterDataService.filterVS(data).subscribe(
           result => {
 
             console.log('result:' + JSON.stringify(result));
@@ -462,10 +466,15 @@ export class NewRoutingEngineComponent implements OnInit, OnChanges {
   }
 
   private onStartDateChanges(control: AbstractControl | any) {
-    control.valueChanges.pipe(distinctUntilChanged)().subscribe(data => {
+    console.log('onStartDateChanges start');
+
+    control.valueChanges.pipe(distinctUntilChanged()).subscribe(data => {
       this.startDate.patchValue(new Date(data).toISOString());
+      console.log('onStartDateChanges middle');
       this.setEndDate(new Date(data));
     });
+    console.log('onStartDateChanges end');
+
   }
 
   private setEndDate(date: Date) {

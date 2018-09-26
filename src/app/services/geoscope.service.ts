@@ -4,7 +4,7 @@
 
 
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EntityEnum} from '../enums/app-enum';
@@ -18,7 +18,7 @@ import {CountryModel} from '../model/country.model';
 @Injectable()
 export class GeoScopeService {
   locations: Array<GeoScopeModel> = [];
-  countryCodes: Array<CountryModel> = [];
+  prefPorts: Array<GeoScopeModel> = [];
 
 
   readonly serverApi = 'http://localhost:8080/nre';
@@ -41,7 +41,7 @@ export class GeoScopeService {
     const URI = this.getUrl(EntityEnum.VESSEL_SYSTEMS) + 'filter/';
     return this.http
       .get<Array<VesselSystemModel>>(URI, {params: search_params}).pipe(
-      catchError(this._handleError));
+        catchError(this._handleError));
   }
 
 
@@ -87,7 +87,6 @@ export class GeoScopeService {
   }
 
 
-
   filterContracts(query: string): Observable<Array<ContractModel>> {
     const search_params: HttpParams = new HttpParams()
       .set('contract_no', query.toUpperCase());
@@ -130,31 +129,44 @@ export class GeoScopeService {
 
   // dummy methods
 
-  filterPortLocations(query: string, geoScopeType: string, countryCode:string):Observable<Array<GeoScopeModel>> {
-    if (this.locations.length === 0) {
-      this.locations.push(new GeoScopeModel(1, 'DEHAM', '', ''));
-      this.locations.push(new GeoScopeModel(2, 'DEBRV', '', ''));
-      this.locations.push(new GeoScopeModel(3, 'ARBUE','', ''));
-      this.locations.push(new GeoScopeModel(4, 'BEANR', '', ''));
-      this.locations.push(new GeoScopeModel(5, 'BRSSZ','', ''));
-    }
-    const result: GeoScopeModel[] = this.locations.filter((imLocation) => imLocation.locationCode.toLowerCase().startsWith(query.toLowerCase()));
-    return Observable.create(result);
+  filterPortLocations(query: string): Observable<Array<GeoScopeModel>> {
+    console.log('service: filter port locations:' + query);
+    this.prefPorts = [];
+    this.prefPorts.push(new GeoScopeModel(1, 'DEHAM', '', ''));
+    this.prefPorts.push(new GeoScopeModel(2, 'DEBRV', '', ''));
+    this.prefPorts.push(new GeoScopeModel(3, 'NLRTM', '', ''));
+    this.prefPorts.push(new GeoScopeModel(4, 'BEANR', '', ''));
+    return of(this.prefPorts);
   }
 
-  filterImLocations(code: string, geoScopeType: string, countryCode:string):Observable<Array<GeoScopeModel>>  {
-    console.log('service: gst:' + geoScopeType);
-    this.locations =[];
+  filterPodLocations(query: string): Observable<Array<GeoScopeModel>> {
+    console.log('service: filter port locations:' + query);
+    this.prefPorts = [];
+    this.prefPorts.push(new GeoScopeModel(1, 'BRSSZ', '', ''));
+    this.prefPorts.push(new GeoScopeModel(2, 'BRMAO', '', ''));
+    this.prefPorts.push(new GeoScopeModel(3, 'BRSUA', '', ''));
+    this.prefPorts.push(new GeoScopeModel(4, 'BRITA', '', ''));
+    return of(this.prefPorts);
+  }
 
-      this.locations.push(new GeoScopeModel(1, 'DUSSELDORF', 'T', 'D'));
-      this.locations.push(new GeoScopeModel(2, 'DUSHEIM','T', 'D'));
-      this.locations.push(new GeoScopeModel(3, 'DUSENHAUSEN','T', 'D'));
-      this.locations.push(new GeoScopeModel(4, 'DEDUS', '', ''));
-      this.locations.push(new GeoScopeModel(5, 'DEDUI', '', ''));
+  filterImLocations(code: string, geoScopeType: string, countryCode: string): Observable<Array<GeoScopeModel>> {
+    console.log('service: filter im locations:' + geoScopeType);
+    this.locations = [];
+
+    this.locations.push(new GeoScopeModel(1, 'DUSSELDORF', 'T', 'D'));
+    this.locations.push(new GeoScopeModel(2, 'DUSHEIM', 'T', 'D'));
+    this.locations.push(new GeoScopeModel(3, 'DUSENHAUSEN', 'T', 'D'));
+    this.locations.push(new GeoScopeModel(4, 'DEDUS', '', ''));
+    this.locations.push(new GeoScopeModel(5, 'DEDUI', '', ''));
 
     const result: GeoScopeModel[] = this.locations.filter((imLocation) => imLocation.locationCode.toLowerCase().startsWith(code.toLowerCase()));
-return Observable.create(result);
+    return of(result);
   }
 
+
+  filterVS(query: string): Observable<VesselSystemModel[]> {
+    const vs:Array<VesselSystemModel> = [];
+    return of(vs);
+  }
 
 }

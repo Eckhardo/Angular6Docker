@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, throwError} from 'rxjs';
+import {Observable, throwError,of} from 'rxjs';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EntityEnum} from '../enums/app-enum';
 import {CountryModel} from '../model/country.model';
@@ -72,7 +72,7 @@ export class CountryService {
       this.countryCodes.push(new CountryModel(1, 'SE', 'SE'));
       this.countryCodes.push(new CountryModel(1, 'NO', 'NO'));
      const result: CountryModel[] =this.countryCodes.filter((countryCode) => countryCode.code.toLowerCase().startsWith(query.toLowerCase()));
-     return Observable.create(result);
+     return of(result);
     }
   }
 }

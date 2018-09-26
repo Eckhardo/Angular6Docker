@@ -192,12 +192,8 @@ export class SearchIntermodalComponent {
         if (result.length === 1) {
           this.formClass.countryCode.patchValue(result[0].code);
           this.filteredCountries = [];
-          console.log('RESULT 1: filterCountries' + JSON.stringify(result));
         } else {
-          console.log('RESULT 2: filterCountries' + JSON.stringify(result));
-
           this.filteredCountries = result;
-          console.log('RESULT 3: filterCountries' + JSON.stringify(this.filteredCountries));
         }
       },
       error: err => console.error('Observer got an error: ' + err),
@@ -255,7 +251,7 @@ export class SearchIntermodalComponent {
    *
    */
   private retrievePreferredPorts() {
-    this.masterDataService.filterPortLocations(this.formClass.inlandLocation.value, this.formClass.inlandGeoScopeType.value, this.formClass.countryCode.value).subscribe(
+    this.masterDataService.filterPortLocations(this.formClass.inlandLocation.value).subscribe(
       result => {
         console.log('result:' + JSON.stringify(result));
         if (result.length === 1) {
