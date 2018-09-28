@@ -34,7 +34,7 @@ export class SearchIntermodalComponent {
   filteredInlandGeoScopes: GeoScopeModel[] = [];
   filteredPortGeoScopes: GeoScopeModel[] = [];
   filteredCountries: Array<CountryModel> = [];
-  keyFigures: Array<KeyFigureModel> = [];
+  keyFigures: Array<any> = [];
 
   constructor(private enumService: EnumService, private countryService: CountryService,
               private masterDataService: GeoScopeService, private searchService: IntermodalSearchService) {
@@ -91,9 +91,10 @@ export class SearchIntermodalComponent {
 
 
   filterKeyFigures() {
-    this.searchService.getKeyFigures(this.form.value).subscribe(result => {
+    this.searchService.getTestKeyFigures(this.form.value).subscribe(result => {
       if (result && result.length > 0) {
         this.keyFigures = result;
+        console.log(JSON.stringify(result));
         this.toggle();
       }
     });
@@ -174,25 +175,24 @@ export class SearchIntermodalComponent {
    */
 
   private onCountryCodeChanges(control: AbstractControl) {
-    console.log('onCountryCodeChanges for value:', control.value);
-    control.valueChanges.pipe(
-      debounceTime<string>(400),
-      distinctUntilChanged(),
-      filter(data => data.toString().length > 0)
-    )
-      .subscribe(data => this.filterCountries(data)
-      );
+  this.logit('onCountryCodeChanges for value:' + control.value);
+    control.valueChanges
+      .pipe(debounceTime<string>(400), distinctUntilChanged(), filter(data => data.toString().length > 0))
+      .subscribe(data => this.filterCountries(data));
   }
 
 
   filterCountries(countryCode) {
-    console.log('filterCountries for:', countryCode);
+    this.logit('filterCountries for:' + countryCode);
     const countryObserver = {
       next: result => {
         if (result.length === 1) {
+          this.logit('filterCountries size==1');
           this.formClass.countryCode.patchValue(result[0].code);
           this.filteredCountries = [];
         } else {
+          this.logit('filterCountries size>1');
+
           this.filteredCountries = result;
         }
       },
@@ -341,4 +341,7 @@ export class SearchIntermodalComponent {
     return length;
   }
 
+  private logit (logInfo:string){
+    console.log(logInfo);
+  }
 }

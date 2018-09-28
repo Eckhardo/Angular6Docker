@@ -6,7 +6,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EntityEnum} from '../../enums/app-enum';
 import {KeyFigureModel} from '../models/keyfigure.model';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
+import {keyfigures} from '../../testdata/keyfigure';
 
 
 @Injectable()
@@ -38,6 +39,10 @@ export class IntermodalSearchService {
     const URI = this.getUrl() + 'filter/';
     return this.http.get<Array<KeyFigureModel>>(URI, {params: search_params});
 
+  }
+  getTestKeyFigures(imSearchModel: object): Observable<Array<any>> {
+
+    return of(keyfigures);
   }
 
   private prepareSearchParams(imSearchModel: Object) {
