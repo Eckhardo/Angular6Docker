@@ -94,7 +94,6 @@ export class SearchIntermodalComponent {
     this.searchService.getTestKeyFigures(this.form.value).subscribe(result => {
       if (result && result.length > 0) {
         this.keyFigures = result;
-        console.log(JSON.stringify(result));
         this.toggle();
       }
     });
@@ -151,14 +150,11 @@ export class SearchIntermodalComponent {
   filterLocations(location: string, type: string, country: string): any {
     this.masterDataService.filterImLocations(location, type, country).subscribe(
       result => {
-
-        console.log('result:' + JSON.stringify(result));
         if (result.length === 1) {
           const singleRow: string = result[0].locationCode;
           this.formClass.inlandLocation.patchValue(singleRow.toUpperCase());
           this.filteredInlandGeoScopes = [];
           this.filteredPortGeoScopes = [];
-          console.log('single:' + JSON.stringify(this.formClass.inlandLocation.value));
           this.retrievePreferredPorts();
         } else if (result.length <= 1) {
           this.retrievePreferredPorts();
@@ -183,17 +179,13 @@ export class SearchIntermodalComponent {
 
 
   filterCountries(countryCode) {
-    this.logit('filterCountries for:' + countryCode);
     const countryObserver = {
       next: result => {
         if (result.length === 1) {
-          this.logit('filterCountries size==1');
           this.formClass.countryCode.patchValue(result[0].code);
           this.filteredCountries = [];
         } else {
-          this.logit('filterCountries size>1');
-
-          this.filteredCountries = result;
+           this.filteredCountries = result;
         }
       },
       error: err => console.error('Observer got an error: ' + err),
@@ -208,7 +200,6 @@ export class SearchIntermodalComponent {
    * @param {AbstractControl} control
    */
   private onInlandGeoScopeChanges(control: AbstractControl) {
-    console.log('onInlandGeoScopeChanges:' + control.value);
     const geoScopeObserver = {
       next: data => {
         if (data === 'T' || data === 'P') {
@@ -225,12 +216,8 @@ export class SearchIntermodalComponent {
       },
       error: err => console.error('Observer got an error: ' + err),
     };
-    console.log('onInlandGeoScopeChanges: before ');
-
     control.valueChanges
-      .pipe(
-        distinctUntilChanged()
-      )
+      .pipe(distinctUntilChanged())
       .subscribe(geoScopeObserver);
 
   }
@@ -270,9 +257,7 @@ export class SearchIntermodalComponent {
    */
   private onIncludeAllPreferredPorts(control: AbstractControl) {
     control.valueChanges
-      .pipe(
-        distinctUntilChanged()
-      )
+      .pipe(distinctUntilChanged())
       .subscribe(data => {
         if (data) {
           this.retrievePreferredPorts();
