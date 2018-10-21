@@ -91,7 +91,7 @@ export class SearchIntermodalComponent {
 
 
   filterKeyFigures() {
-    this.searchService.getTestKeyFigures(this.form.value).subscribe(result => {
+    this.searchService.getKeyFigures(this.form.value).subscribe(result => {
       if (result && result.length > 0) {
         this.keyFigures = result;
         this.toggle();
@@ -148,7 +148,7 @@ export class SearchIntermodalComponent {
    * @returns {any}
    */
   filterLocations(location: string, type: string, country: string): any {
-    this.masterDataService.filterImLocations(location, type, country).subscribe(
+    this.masterDataService.filterLocations(location, type, country).subscribe(
       result => {
         if (result.length === 1) {
           const singleRow: string = result[0].locationCode;
@@ -177,7 +177,11 @@ export class SearchIntermodalComponent {
       .subscribe(data => this.filterCountries(data));
   }
 
-
+  /**
+   * Search for Countries
+   *
+   * @param countryCode
+   */
   filterCountries(countryCode) {
     const countryObserver = {
       next: result => {
@@ -192,7 +196,7 @@ export class SearchIntermodalComponent {
       complete: () => console.log('finished'),
     };
 
-    this.countryService.filterCountryCode(countryCode).subscribe(countryObserver);
+    this.countryService.filterCountries(countryCode).subscribe(countryObserver);
   }
 
   /**
@@ -238,7 +242,7 @@ export class SearchIntermodalComponent {
    *
    */
   private retrievePreferredPorts() {
-    this.masterDataService.filterPortLocations(this.formClass.inlandLocation.value).subscribe(
+    this.masterDataService.filterPorts(this.formClass.inlandLocation.value).subscribe(
       result => {
         console.log('result:' + JSON.stringify(result));
         if (result.length === 1) {
