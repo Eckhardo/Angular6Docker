@@ -1,17 +1,10 @@
 
-## Stage 1: build angular 6 appilication ##
-FROM node:8 as builder
+FROM nginx:alpine
 
-COPY app /app
+COPY nginx.conf /etc/nginx/nginx.conf
 
-WORKDIR /app
-RUN npm install
-RUN $(npm bin)/ng build
-
-
-## Stage 2: run nginx to serve appilication ##
-FROM nginx
-
-COPY --from=builder /app/dist/* /usr/share/nginx/html/
+WORKDIR /usr/share/nginx/html
+COPY /app/dist/* .
 
 EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
