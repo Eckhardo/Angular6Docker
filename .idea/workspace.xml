@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="773387f3-3f6b-4aaf-a0bb-99e7d809b1d9" name="Default Changelist" comment="Dockerize application; Adapt to Spring Boot Backend (CORS)">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Angular6Docker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/polyfills.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/runtime.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/styles.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/vendor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dist/AigeNew/vendor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/protractor.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/e2e/protractor.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/app.po.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/e2e/src/app.po.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/tsconfig.e2e.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/e2e/tsconfig.e2e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-220260813">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.7" value="5" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="21" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Dockerfile" value="6" />
+          <entry key="conf" value="5" />
+          <entry key="css" value="1" />
+          <entry key="editorconfig" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="js" value="1" />
+          <entry key="json" value="10" />
+          <entry key="ts" value="45" />
+          <entry key="yaml" value="21" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="Dockerfile" value="6" />
+          <entry key="JSON" value="8" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="TypeScript" value="45" />
+          <entry key="YAML" value="21" />
+          <entry key="tsconfig" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="Angular2LanguageService" value="7" />
+          <entry key="TsLintLanguageService" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Dockerfile" value="326" />
+          <entry key="conf" value="165" />
+          <entry key="gitignore" value="14" />
+          <entry key="json" value="40" />
+          <entry key="ts" value="1187" />
+          <entry key="txt" value="354" />
+          <entry key="yaml" value="659" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Dockerfile" value="326" />
+          <entry key="JSON" value="40" />
+          <entry key="PLAIN_TEXT" value="533" />
+          <entry key="TypeScript" value="1187" />
+          <entry key="YAML" value="659" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.kubernetes.usages">
+        <counts>
+          <entry key="completion.kind" value="1" />
+          <entry key="completion.label.key" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nginx.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="523">
+              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/enums/app-enum.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/services/country.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="12" column="42" selection-start-line="12" selection-end-line="12" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>service: gst:</find>
+      <find>''</find>
+      <find>AigeNew</find>
+      <find>backend</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>SearchImComponent</replace>
+      <replace>springboot</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Dev\WebstormProjects\Angular6Docker\src</dir>
+      <dir>C:\Dev\WebstormProjects\Angular6Docker</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/app/model/geoscope.model.ts" />
+        <option value="$PROJECT_DIR$/src/app/services/geoscope.service.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/intermodal/im.search/search-intermodal.component-withSpies.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/intermodal/im.search/search-intermodal.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/intermodal/im.search/search-intermodal.component.ts" />
+        <option value="$PROJECT_DIR$/src/styles.css" />
+        <option value="$PROJECT_DIR$/src/app/services/geoscope.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/services/country.service.ts" />
+        <option value="$PROJECT_DIR$/app/.gitignore" />
+        <option value="$PROJECT_DIR$/app/angular.json" />
+        <option value="$PROJECT_DIR$/app/src/app/testdata/keyfigure.ts" />
+        <option value="$PROJECT_DIR$/nre-replicationcontroller.yaml" />
+        <option value="$PROJECT_DIR$/nre-nodeport.yaml" />
+        <option value="$PROJECT_DIR$/replicaset.yaml" />
+        <option value="$PROJECT_DIR$/app/package.json" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/try.yaml" />
+        <option value="$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts" />
+        <option value="$PROJECT_DIR$/test.yaml" />
+        <option value="$PROJECT_DIR$/nre-replicaset.yaml" />
+        <option value="$PROJECT_DIR$/app/nre-deployment.yaml" />
+        <option value="$PROJECT_DIR$/nre-service.yaml" />
+        <option value="$PROJECT_DIR$/nre-loadbalancer.yaml" />
+        <option value="$PROJECT_DIR$/app/src/app/services/country.service.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/services/geoscope.service.ts" />
+        <option value="$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts" />
+        <option value="$PROJECT_DIR$/nginx.conf" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/app/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/app/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/app/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1750" />
+    <option name="height" value="970" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Angular6Docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Angular6Docker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Angular6Docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Angular6Docker" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Angular6Docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Angular6Docker" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Angular6Docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Angular6Docker" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Angular6Docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Angular6Docker" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Angular6Docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Angular6Docker" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/node_modules/tslint" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="C:\Dev\WebstormProjects\Angular6Docker\app\node_modules\tslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="ts.external.directory.path" value="C:\Dev\WebstormProjects\Angular6Docker\app\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\WebstormProjects\Angular6Docker" />
+      <recent name="C:\Dev\WebstormProjects\Angular6Docker\app" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.Dockerfile">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="build (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.build (1)" />
+      <item itemvalue="npm.test (1)" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="npm.start (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build (1)" />
+        <item itemvalue="npm.start (1)" />
+        <item itemvalue="npm.test (1)" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="773387f3-3f6b-4aaf-a0bb-99e7d809b1d9" name="Default Changelist" comment="" />
+      <created>1537893853952</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537893853952</updated>
+      <workItem from="1537893855450" duration="14012000" />
+      <workItem from="1538031530285" duration="1293000" />
+      <workItem from="1538032892197" duration="10881000" />
+      <workItem from="1538500484602" duration="5657000" />
+      <workItem from="1538592855831" duration="7562000" />
+      <workItem from="1538612683968" duration="2577000" />
+      <workItem from="1538636568699" duration="1772000" />
+      <workItem from="1538640125756" duration="367000" />
+      <workItem from="1538646377423" duration="138000" />
+      <workItem from="1538811933295" duration="1093000" />
+      <workItem from="1538825156471" duration="710000" />
+      <workItem from="1539017413140" duration="599000" />
+      <workItem from="1539075663036" duration="351000" />
+      <workItem from="1539450611317" duration="731000" />
+      <workItem from="1539513193196" duration="153000" />
+      <workItem from="1539787885498" duration="798000" />
+      <workItem from="1540067236106" duration="629000" />
+      <workItem from="1540122633815" duration="5908000" />
+      <workItem from="1540130410968" duration="4920000" />
+      <workItem from="1540196678250" duration="2502000" />
+      <workItem from="1540534518872" duration="15300000" />
+    </task>
+    <task id="LOCAL-00001" summary="Upgrade to Angular 6.">
+      <created>1537902266420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537902266420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Exchange http calls with dummy calls;&#10;Add style sheets;">
+      <created>1537950951130</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1537950951130</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Docker file for angular app running on nginx">
+      <created>1538034299873</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1538034299873</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Temporarily Replace Http calls with mocks.">
+      <created>1538119338223</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1538119338223</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Temporarily Replace Http calls with mocks.">
+      <created>1538119498444</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1538119498444</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Dockerize application">
+      <created>1540136171815</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540136171815</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Dockerize application; Adapt to Spring Boot Backend (CORS)">
+      <created>1540136229948</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1540136229948</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Kubernetes Configuration:&#10;- adapt nginx.conf&#10;- adapt kubernetes deployment &amp; load balancer">
+      <created>1540573660723</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1540573660723</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="search-intermodal_component_spec_ts - 2018.09.25 at 19h 45m 09s.xml">
+      <configuration name="search-intermodal.component.spec.ts" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="SearchImComponent - 2018.09.25 at 19h 48m 51s.xml">
+      <configuration name="SearchImComponent" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="SearchImComponent_#MOST_complex_Test__Fills_countryCode_autocomplete_which_triggers_reactive_form_observable_which_triggers_service_call - 2018.09.25 at 19h 50m 17s.xml">
+      <configuration name="SearchImComponent.#MOST complex Test: Fills countryCode autocomplete which triggers reactive form observable which triggers service call" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="search-intermodal_component_spec_ts - 2018.09.25 at 19h 50m 38s.xml">
+      <configuration name="search-intermodal.component.spec.ts" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="search-intermodal_component_spec_ts - 2018.09.25 at 19h 52m 03s.xml">
+      <configuration name="search-intermodal.component.spec.ts" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="search-intermodal_component_spec_ts - 2018.09.25 at 19h 53m 38s.xml">
+      <configuration name="search-intermodal.component.spec.ts" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="search-intermodal_component_spec_ts - 2018.09.25 at 19h 54m 44s.xml">
+      <configuration name="search-intermodal.component.spec.ts" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="SearchImComponent - 2018.09.25 at 19h 58m 44s.xml">
+      <configuration name="SearchImComponent" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="SearchImComponent - 2018.09.25 at 20h 19m 20s.xml">
+      <configuration name="SearchImComponent" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="SearchImComponent - 2018.09.25 at 20h 40m 00s.xml">
+      <configuration name="SearchImComponent" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="77953000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" id="npm" order="1" sideWeight="0.615222" side_tool="true" visible="true" weight="0.27164572" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.38477802" visible="true" weight="0.27164572" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" sideWeight="0.49966952" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49966952" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5069398" side_tool="true" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="TypeScript" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.4976867" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49306014" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Upgrade to Angular 6." />
+    <MESSAGE value="Exchange http calls with dummy calls;&#10;Add style sheets;" />
+    <MESSAGE value="Add Docker file for angular app running on nginx" />
+    <MESSAGE value="Temporarily Replace Http calls with mocks." />
+    <MESSAGE value="Dockerize application" />
+    <MESSAGE value="Dockerize application; Adapt to Spring Boot Backend (CORS)" />
+    <MESSAGE value="Kubernetes Configuration:&#10;- adapt nginx.conf&#10;- adapt kubernetes deployment &amp; load balancer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kubernetes Configuration:&#10;- adapt nginx.conf&#10;- adapt kubernetes deployment &amp; load balancer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts</url>
+          <line>118</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts</url>
+          <line>109</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts</url>
+          <line>47</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="dart-exception">
+          <properties />
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component-withSpies.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@angular/core/testing/src/component_fixture.d.ts" />
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/country.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="53" column="59" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/newRoutingEngine/nre.search.component/nre-search.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="467" column="34" selection-start-line="467" selection-start-column="34" selection-end-line="467" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/model/geoscope.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/testdata/geoscopes.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/models/keyfigure.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/enums/cargo.type.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/testdata/keyfigure.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.result/result-intermodal.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/try.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dist/AigeNew/main.748ecf74a9d3850cfd7c.js" />
+    <entry file="file://$PROJECT_DIR$/app/dist/AigeNew/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nre-nodeport.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" lean-forward="true" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="e#386#519#0" expanded="true" />
+            <element signature="e#528#665#0" expanded="true" />
+            <element signature="e#674#803#0" expanded="true" />
+            <element signature="e#812#941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nre-replicaset.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="18" selection-start-line="18" selection-start-column="2" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/home/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/im.search/search-intermodal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="244" lean-forward="true" selection-start-line="244" selection-end-line="244" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nre-service.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nre-deployment.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nre-loadbalancer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/config.service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/country.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="42" selection-start-line="12" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/services/geoscope.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/intermodal/services/im.search.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/app/enums/app-enum.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
